@@ -354,7 +354,16 @@
         height: var(--header-with-search-height);
         display: flex;
         align-items: center;
-        margin: 20px 0 8px;
+        margin: 6px 0 8px;
+    }
+    
+    .header__moblie-search {
+        padding: 0 12px;
+    }
+    
+    .header__moblie-search-icon {
+        font-size: 2.6rem;
+        color: var(--white-color);
     }
     
     .header__logo {
@@ -368,6 +377,8 @@
     .header__logo-link {
         color: transparent;
         text-decoration: none;
+        display: block;
+        line-height: 0;
     }
     
     .header__search {
@@ -490,6 +501,10 @@
     .header__search-input:focus~.header__search-history {
         display: block;
     }
+    
+    .header__search-checkbox:checked~.header__search {
+        display: flex;
+    }
     /* Search history */
     
     .header__search-history {
@@ -592,7 +607,60 @@
     .header__cart-list--no-cart {
         padding: 24px 0;
     }
+    /* Header sort bar */
+    
+    .header__sort-bar {
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        margin: 0;
+        height: var(--header-sort-bar-heigth);
+        background-color: var(--white-color);
+        list-style: none;
+        padding: 12px;
+        text-align: center;
+        border-top: 1px solid #e5e5e5;
+        border-bottom: 1px solid #e5e5e5;
+        display: none;
+    }
+    
+    .header__sort-item {
+        flex: 1;
+    }
+    
+    .header__sort-link {
+        text-decoration: none;
+        color: var(--text-color);
+        font-size: 1.4rem;
+        display: block;
+        height: 100%;
+        line-height: var(--header-sort-bar-heigth);
+        position: relative;
+    }
+    
+    .header__sort-link::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        height: 100%;
+        border-left: 1px solid #ccc;
+        transform: translateY(-50%);
+    }
+    
+    .header__sort--active .header__sort-link {
+        color: var(--primary-color);
+    }
+    
+    .header__sort-item:first-child .header__sort-link::before {
+        display: none;
+    }
     /* App container */
+    
+    .app {
+        overflow: hidden;
+    }
     
     .app__container {
         background-color: #f5f5f5;
@@ -657,6 +725,15 @@
         right: -4px;
         color: var(--primary-color)
     }
+    /* Mobile category */
+    
+    .mobile-category {}
+    
+    .mobile-category__list {}
+    
+    .mobile-category__item {}
+    
+    .mobile-category__link {}
     /* Home sort + filter */
     
     .home-filter {
@@ -914,6 +991,7 @@
     
     .home-product__pagination {
         margin: 48px 0 32px 0;
+        padding-left: 0;
     }
     /* Footer */
     
