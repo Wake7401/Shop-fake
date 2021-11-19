@@ -359,6 +359,7 @@
     
     .header__moblie-search {
         padding: 0 12px;
+        display: none;
     }
     
     .header__moblie-search-icon {
@@ -563,6 +564,7 @@
         padding: 0 8px;
         cursor: pointer;
         z-index: 1;
+        -webkit-tap-highlight-color: transparent;
     }
     
     .header__cart-wrap:hover .header__cart-list {
@@ -637,6 +639,7 @@
         height: 100%;
         line-height: var(--header-sort-bar-heigth);
         position: relative;
+        -webkit-tap-highlight-color: transparent;
     }
     
     .header__sort-link::before {
@@ -727,13 +730,60 @@
     }
     /* Mobile category */
     
-    .mobile-category {}
+    .mobile-category {
+        display: none;
+    }
     
-    .mobile-category__list {}
+    .mobile-category__list {
+        display: flex;
+        list-style: none;
+        padding-left: 0;
+        max-width: 100%;
+        overflow-x: auto;
+    }
     
-    .mobile-category__item {}
+    .mobile-category__list::-webkit-scrollbar {
+        display: none;
+    }
     
-    .mobile-category__link {}
+    .mobile-category__item {
+        flex-shrink: 0;
+        margin-right: 10px;
+    }
+    
+    .mobile-category__item:nth-last-of-type(3n+1) .mobile-category__link {
+        background-color: #f3a697;
+    }
+    
+    .mobile-category__item:nth-last-of-type(3n+2) .mobile-category__link {
+        background-color: #F63D00;
+    }
+    
+    .mobile-category__item:nth-last-of-type(3n+3) .mobile-category__link {
+        background-color: #fe6433;
+    }
+    
+    .mobile-category__link {
+        --line-height: 2rem;
+        text-decoration: none;
+        color: var(--white-color);
+        font-size: 1.4rem;
+        line-height: var(--line-height);
+        text-align: center;
+        width: 110px;
+        height: calc(var(--line-height) * 2);
+        display: block;
+        border-radius: 4px;
+        font-weight: 300;
+        overflow: hidden;
+        display: -webkit-box;
+        --webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        user-select: none;
+        -webkit-user-select: none;
+        -webkit-tap-highlight-color: transparent;
+        padding: 0 6px;
+    }
     /* Home sort + filter */
     
     .home-filter {
@@ -1054,6 +1104,7 @@
     .footer__download-apps-link {
         color: transparent;
         text-decoration: none;
+        -webkit-tap-highlight-color: transparent;
     }
     
     .footer__bottom {
